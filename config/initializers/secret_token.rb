@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Studguru::Application.config.secret_token = 'f30fc6fa1f5268b6e3ee74dd2430092f656e796017d735d4a0c55e9cc83d2e5620797587d5b2c285720a25033a7f6f5f74de1e6269291d53a0ab40fba903a4c6'
+Studguru::Application.config.secret_token = '1b42c5df6541a36d4154d7a86864166d6338e7beb68a61541909cfd5f211cc1da7b9289aa3618f74aa45b79830e5c391b3f4a0327a18fa23f517dcd7408f674e'
