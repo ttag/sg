@@ -12,8 +12,8 @@ class Devise::RegistrationsController < ApplicationController
   # POST /resource
   def create
     build_resource
-
-    if resource.save
+    
+     if resource.save 
       set_flash_message :notice, :signed_up
       sign_in_and_redirect(resource_name, resource)
     else

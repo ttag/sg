@@ -15,13 +15,18 @@ class ProfilesController < ApplicationController
   def show
 #    @profile = Profile.find(params[:id])
 #	    @user = current_user
-#debugger
+
     @user= current_user
     @profile =Profile.find(:all,:conditions => ["user_id = ?", current_user.id])
-
-    respond_to do |format|
+    if @profile.empty?
+      puts "reachd here"
+      render :action => "complete_profile"
+    else
+      puts "2nd reachd"
+     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @profile }
+      format.xml  { render :xml => @profile } 
+    end
     end
   end
 
@@ -29,7 +34,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new.xml
   def new
     @profile = Profile.new
-
+    @user = current_user
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @profile }
@@ -45,7 +50,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.xml
   def create
     @profile = Profile.new(params[:profile])
-
+     @profile.user_id = current_user.id
     respond_to do |format|
       if @profile.save
         format.html { redirect_to(@profile, :notice => 'Profile was successfully created.') }
@@ -83,5 +88,9 @@ class ProfilesController < ApplicationController
       format.html { redirect_to(profiles_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def complete_profile
+
   end
 end
