@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
   def show
 #    @profile = Profile.find(params[:id])
 #	    @user = current_user
-debugger
+#debugger
     @user= current_user
     @profile =Profile.find(:all,:conditions => ["user_id = ?", current_user.id])
 
