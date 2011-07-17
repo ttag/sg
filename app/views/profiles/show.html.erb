@@ -12,14 +12,15 @@
 
 <p>
   <b>Likes:</b>
+  <p id="editme2">
   <%= @profile.first.likes %>
-</p>
+  </p>
+  </p>
 
-<p>
+  <p>
   <b>Dislikes:</b>
-  <%= @profile.first.dislikes %>
+<p id="editme2">
+<%= @profile.first.dislikes %>
+</p>
 </p>
 
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
